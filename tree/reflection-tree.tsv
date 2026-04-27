@@ -1,0 +1,30 @@
+id	parentId	type	text	options	target	signal
+START	null	start	Good evening. Let’s reflect on your day.			
+A1_Q1	START	question	When the day became difficult, what was your first reaction?	I tried to identify what I could still influence|I waited for things to settle or for someone to step in|I pushed through without thinking much|I felt stuck because of how others were behaving		axis1:internal|axis1:external|axis1:internal|axis1:external
+A1_Q2	A1_Q1	question	When something went well today, what explains it best?	I had prepared or thought ahead|The team supported at the right time|It just worked out luckily|The situation was favorable		axis1:internal|axis1:external|axis1:external|axis1:external
+A1_Q3	A1_Q2	question	When plans changed unexpectedly, you…	Adjusted and made a new plan|Felt irritated but continued|Waited for clarity from others|Felt the day was derailed		axis1:internal|axis1:internal|axis1:external|axis1:external
+A1_D1	A1_Q3	decision			axis1
+A1_Q_EXTRA	A1_Q_AGENCY_HIGH	question	After things went well, what did you feel most strongly?	Proud of my effort|Grateful for support|Relieved it worked|Lucky it didn’t fail		axis1:internal
+A1_R_INT	A1_D1	reflection	You showed signs of taking charge of your day. Even when things shifted, you looked for what you could influence. That’s personal agency.			axis1:internal
+A1_R_EXT	A1_D1	reflection	Today felt shaped by circumstances and others. That’s natural on tough days. But somewhere in there, you still made choices worth noticing.			axis1:external
+BRIDGE_1_2	A1_R_INT	bridge	Now let’s shift from how you handled the day to what you gave during it.		A2_Q4	
+BRIDGE_1_2B	A1_R_EXT	bridge	Now let’s shift from how you handled the day to what you gave during it.		A2_Q4	
+A2_Q4	BRIDGE_1_2	question	In one interaction today, you mostly…	Helped someone move forward|Shared knowledge or guidance|Needed support from someone|Felt ignored or unsupported		axis2:contribution|axis2:contribution|axis2:entitlement|axis2:entitlement
+A2_Q5	A2_Q4	question	During work today, your focus was more on…	Finishing what would help the team|Doing your assigned tasks well|Ensuring your effort was noticed|Getting through your workload		axis2:contribution|axis2:neutral|axis2:entitlement|axis2:entitlement
+A2_Q6	A2_Q5	question	When someone asked for help, you…	Gave time even if you were busy|Helped briefly|Suggested they ask someone else|Felt it was not your responsibility		axis2:contribution|axis2:contribution|axis2:entitlement|axis2:entitlement
+A2_D1	A2_Q6	decision			axis2
+A2_Q_EXTRA	A2_Q_CONTRIB	question	What motivated you to do that extra/helpful action?	It felt right|I wanted the team to succeed|I enjoy helping|I didn’t think much about it		axis2:contribution
+A2_R_CONTRIB	A2_D1	reflection	You showed up for others today. Your actions added value beyond your own tasks. That’s contribution in action.			axis2:contribution
+A2_R_ENT	A2_D1	reflection	Today, your attention was pulled toward what you needed from others. That happens. Noticing it is the first step toward balance.			axis2:entitlement
+BRIDGE_2_3	A2_R_CONTRIB	bridge	Finally, let’s zoom out and look at who today was really about.		A3_Q7	
+BRIDGE_2_3B	A2_R_ENT	bridge	Finally, let’s zoom out and look at who today was really about.		A3_Q7	
+A3_Q7	BRIDGE_2_3	question	While making decisions today, you mostly considered…	How it affects the team|How it affects the project|How it affects your tasks|How it affects your time		axis3:others|axis3:others|axis3:self|axis3:self
+A3_Q8	A3_Q7	question	When something frustrating happened, you thought about…	Why this might be happening for everyone|How to prevent this for the group|How it disturbed your flow|How unfair it felt to you		axis3:others|axis3:others|axis3:self|axis3:self
+A3_Q9	A3_Q8	question	At the end of the day, you feel more…	Connected to the people you worked with|Satisfied with the work done|Tired from managing your tasks|Drained by interactions		axis3:others|axis3:others|axis3:self|axis3:self
+A3_D1	A3_Q9	decision			axis3
+A3_R_OTH	A3_D1	reflection	Today, your thoughts frequently included others — their experience, the team, and the shared outcome. That’s an outward mindset.			axis3:others
+A3_R_SELF	A3_D1	reflection	Today felt centered on managing your own tasks and reactions. That’s natural on demanding days, and noticing it helps create balance.			axis3:self
+BRIDGE_3_SUM_A	A3_R_OTH	bridge	Let’s bring these reflections together.		SUMMARY	
+BRIDGE_3_SUM_B	A3_R_SELF	bridge	Let’s bring these reflections together.		SUMMARY	
+SUMMARY	null	summary	You described today as "{A1_OPEN.answer}". In your interactions, you said "{A2_OPEN.answer}". When facing challenges, you were mostly thinking about "{A3_OPEN.answer}". Taken together, this shows how you responded to events, what you focused on giving, and who was in your frame of concern. Notice the pattern — this is how you showed up today.		
+END	SUMMARY	end	That’s it for today. See you tomorrow.			
